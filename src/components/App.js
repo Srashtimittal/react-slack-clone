@@ -31,16 +31,14 @@ function App() {
   const auth = useContext(UserContext);
   console.log('App -> auth', auth);
 
-  if (auth.loading) {
-    return <h1>Loading!</h1>;
-  }
+  
 
   return (
     <div>
       <Switch>
         <Route exact path="/login" component={SignIn} />
         <Route exact path="/signup" component={SignIn} />
-        <PrivateRoute
+        <Route
           exact
           path="/"
           component={Slack}
